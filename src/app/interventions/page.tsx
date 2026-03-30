@@ -70,6 +70,7 @@ export default function InterventionsPage() {
       <PageHero
         badge="Interventions"
         title="Evidence-Based Solutions for Community Health"
+        heroImage="/images/projects/adolescent.jpg"
       />
       <div className="h-12 bg-gradient-to-b from-teal-950 to-warm-50" aria-hidden />
 
@@ -103,18 +104,21 @@ export default function InterventionsPage() {
               title="Community-Based Interventions"
               description="Outreach, peer support, and structured community activities that bring prevention, care navigation, and health literacy closer to people’s homes and daily lives."
               variant="filled"
+              image="/images/partners/partner-communities.jpg"
             />
             <FeatureCard
               icon={Building2}
               title="Health Facility Strengthening"
               description="Workflows, training, supervision, and data use that help facilities deliver safer, more equitable care—linked to community programmes so no one falls through the gaps."
               variant="filled"
+              image="/images/partners/partner-health-institutions.jpg"
             />
             <FeatureCard
               icon={BrainCircuit}
               title="Behavioural Change Programmes"
               description="Evidence-informed messaging, social norms work, and repeated touchpoints that support lasting habits—from immunisation uptake to chronic disease self-care."
               variant="filled"
+              image="/images/projects/adolescent.jpg"
             />
           </StaggerChildren>
         </div>
@@ -192,36 +196,42 @@ export default function InterventionsPage() {
               title="Maternal & Newborn Health"
               description="Timely antenatal and postnatal support, danger-sign awareness, and care pathways that connect homes, volunteers, and facilities."
               href="/programs"
+              image="/images/projects/maternal-health.jpg"
             />
             <FeatureCard
               icon={Apple}
               title="Child Health & Nutrition"
               description="Growth monitoring, feeding counselling, illness recognition, and referrals integrated with community and clinic touchpoints."
               href="/programs"
+              image="/images/hero.png"
             />
             <FeatureCard
               icon={ShieldCheck}
               title="Preventive Health & Immunisation"
               description="Demand generation, reminder systems, and outreach that reinforce routine immunisation and essential preventive services."
               href="/programs"
+              image="/images/news/chw-program-launch.jpg"
             />
             <FeatureCard
               icon={Brain}
               title="Mental Health & Psychosocial Support"
               description="Stigma-reduction, basic psychosocial skills, and referral pathways that make mental wellbeing part of everyday community and facility care."
               href="/programs"
+              image="/images/projects/adolescent.jpg"
             />
             <FeatureCard
               icon={GraduationCap}
               title="Adolescent Health & Wellbeing"
               description="Safe spaces in schools and communities for health education, peer support, and confidential linkage to services when needed."
               href="/programs"
+              image="/images/projects/adolescent.jpg"
             />
             <FeatureCard
               icon={Activity}
               title="Non-Communicable Disease Prevention"
               description="Screening, lifestyle counselling, and long-term follow-up aligned with primary care to reduce preventable NCD burden."
               href="/programs"
+              image="/images/partners/partner-health-institutions.jpg"
             />
           </StaggerChildren>
         </div>

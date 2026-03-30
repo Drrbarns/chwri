@@ -24,6 +24,7 @@ const articles: {
   date: string;
   readTime: string;
   href: string;
+  image: string;
 }[] = [
   {
     title:
@@ -34,6 +35,7 @@ const articles: {
     date: "Feb 2025",
     readTime: "5 min read",
     href: "#",
+    image: "/images/news/chw-program-launch.jpg",
   },
   {
     title:
@@ -44,6 +46,7 @@ const articles: {
     date: "Jan 2025",
     readTime: "7 min read",
     href: "#",
+    image: "/images/partners/partner-academic.jpg",
   },
   {
     title:
@@ -54,6 +57,7 @@ const articles: {
     date: "Dec 2024",
     readTime: "6 min read",
     href: "#",
+    image: "/images/partners/partner-communities.jpg",
   },
   {
     title:
@@ -64,6 +68,7 @@ const articles: {
     date: "Nov 2024",
     readTime: "4 min read",
     href: "#",
+    image: "/images/news/policy-dialogue.jpg",
   },
   {
     title:
@@ -74,6 +79,7 @@ const articles: {
     date: "Oct 2024",
     readTime: "2 min read",
     href: "#",
+    image: "/images/projects/chw-training.jpg",
   },
   {
     title:
@@ -84,6 +90,7 @@ const articles: {
     date: "Sep 2024",
     readTime: "5 min read",
     href: "#",
+    image: "/images/projects/maternal-health.jpg",
   },
 ];
 
@@ -126,6 +133,7 @@ export default function NewsPage() {
       <PageHero
         badge="News & Insights"
         title="Stories, Updates, and Perspectives from CHWRI"
+        heroImage="/images/news/chw-program-launch.jpg"
       />
 
       <section className="bg-warm-50 py-20 lg:py-28">
@@ -144,6 +152,7 @@ export default function NewsPage() {
             date="March 2025"
             readTime="8 min read"
             href="#"
+            image="/images/news/chw-program-launch.jpg"
           />
         </div>
       </section>

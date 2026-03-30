@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { AnimateOnScroll } from "@/lib/motion";
 import { cn } from "@/lib/utils";
@@ -36,6 +37,16 @@ export function CTASection({
     >
       {isDark && (
         <>
+          <div className="absolute inset-0">
+            <Image
+              src="/images/partners/partner-international.jpg"
+              alt="Global health collaboration meeting"
+              fill
+              className="object-cover"
+              sizes="100vw"
+            />
+          </div>
+          <div className="absolute inset-0 bg-teal-950/30" aria-hidden />
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-10 right-1/4 w-80 h-80 bg-teal-300 rounded-full blur-3xl" />
             <div className="absolute bottom-10 left-1/4 w-60 h-60 bg-sage-300 rounded-full blur-3xl" />

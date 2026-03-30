@@ -50,6 +50,7 @@ export default function HealthSystemsPage() {
       <PageHero
         badge="Health Systems Strengthening"
         title="Building Resilient, Equitable Health Systems"
+        heroImage="/images/projects/chw-training.jpg"
       />
 
       {/* Overview */}
@@ -148,18 +149,21 @@ export default function HealthSystemsPage() {
               title="Quality of care"
               description="Clinical audits, checklists, and supportive supervision that turn standards into routines—reducing harm and building confidence in rural facilities."
               variant="default"
+              image="/images/partners/partner-health-institutions.jpg"
             />
             <FeatureCard
               icon={HeartPulse}
               title="Patient-centred approaches"
               description="Communication skills, waiting-time improvements, and feedback mechanisms so services respect dignity, language, and the realities of household travel and cost."
               variant="default"
+              image="/images/partners/partner-communities.jpg"
             />
             <FeatureCard
               icon={Package}
               title="Supply chain & logistics"
               description="Tracking essential medicines and commodities, addressing stock-outs, and strengthening accountability between stores, facilities, and community delivery points."
               variant="default"
+              image="/images/projects/chw-training.jpg"
             />
           </StaggerChildren>
         </div>
@@ -226,18 +230,21 @@ export default function HealthSystemsPage() {
               title="Health information systems"
               description="Support for registers, electronic tools where available, and data standards that reduce duplication and clarify who is reached by which service."
               variant="filled"
+              image="/images/partners/partner-academic.jpg"
             />
             <FeatureCard
               icon={LineChart}
               title="Data-driven decision-making"
               description="Facilitated review meetings, simple visual analytics, and indicators tied to quality and equity—not only activity counts."
               variant="filled"
+              image="/images/news/policy-dialogue.jpg"
             />
             <FeatureCard
               icon={ClipboardCheck}
               title="HMIS & reporting support"
               description="Validation, timeliness, and use of routine data—helping districts see patterns early and respond before gaps widen."
               variant="filled"
+              image="/images/projects/maternal-health.jpg"
             />
           </StaggerChildren>
         </div>
@@ -305,18 +312,21 @@ export default function HealthSystemsPage() {
               description="Curricula co-designed with partners, covering systems topics from leadership and quality improvement to community engagement and ethics."
               href="/interventions"
               variant="outlined"
+              image="/images/projects/chw-training.jpg"
             />
             <FeatureCard
               icon={Presentation}
               title="Workshops & intensives"
               description="Focused sessions for district teams and facility in-charges—problem-solving, action planning, and tools they can reuse after CHWRI facilitators step back."
               variant="outlined"
+              image="/images/news/policy-dialogue.jpg"
             />
             <FeatureCard
               icon={ClipboardCheck}
               title="Continuous education"
               description="Refresher cycles, remote support, and light-touch coaching so new skills settle into practice and are refreshed as guidelines evolve."
               variant="outlined"
+              image="/images/partners/partner-health-institutions.jpg"
             />
           </StaggerChildren>
         </div>

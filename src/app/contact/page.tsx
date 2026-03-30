@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Phone,
   Mail,
@@ -98,7 +99,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <PageHero badge="Contact Us" title="Let's Start a Conversation" />
+      <PageHero badge="Contact Us" title="Let's Start a Conversation" heroImage="/images/partners/partner-international.jpg" />
 
       {/* Contact grid */}
       <section className="py-20 lg:py-28 bg-warm-50">
@@ -225,21 +226,26 @@ export default function ContactPage() {
           />
           <AnimateOnScroll>
             <div
-              className="relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-sage-100/80 via-teal-50 to-warm-100 min-h-[320px] lg:min-h-[400px] shadow-inner"
-              role="img"
-              aria-label="Map placeholder: Walewale, North-East Region, Ghana"
+              className="relative overflow-hidden rounded-3xl border border-slate-200 min-h-[320px] lg:min-h-[400px] shadow-inner"
             >
-              <div className="absolute inset-0 opacity-[0.12] bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSA2MCAwIEwgMCAwIDAgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzBmNzY2ZSIgc3Ryb2tlLXdpZHRoPSIwLjUiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')]" />
+              <Image
+                src="/images/partners/partner-communities.jpg"
+                alt="Community setting in Walewale, North-East Region, Ghana"
+                fill
+                className="object-cover"
+                sizes="100vw"
+              />
+              <div className="absolute inset-0 bg-teal-950/35" aria-hidden />
               <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-teal-700 text-white shadow-lg">
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-teal-800/90 text-white shadow-lg">
                   <MapPin className="w-8 h-8" aria-hidden />
                 </div>
-                <p className="font-heading text-lg font-semibold text-slate-900">Walewale, Ghana</p>
-                <p className="mt-1 text-sm text-slate-600 max-w-md">
-                  North-East Region · Approximate map area for CHWRI
+                <p className="font-heading text-lg font-semibold text-white">Walewale, Ghana</p>
+                <p className="mt-1 text-sm text-teal-100 max-w-md">
+                  North-East Region · CHWRI community context
                 </p>
-                <p className="mt-4 text-xs uppercase tracking-wider text-teal-700 font-semibold">
-                  Embedded map placeholder
+                <p className="mt-4 text-xs uppercase tracking-wider text-teal-200 font-semibold">
+                  Embedded map coming soon
                 </p>
               </div>
             </div>

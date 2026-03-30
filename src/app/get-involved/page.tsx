@@ -66,7 +66,7 @@ const PARTNER_BULLETS = [
 export default function GetInvolvedPage() {
   return (
     <>
-      <PageHero badge="Get Involved" title="Be Part of the Change" />
+      <PageHero badge="Get Involved" title="Be Part of the Change" heroImage="/images/partners/partner-communities.jpg" />
 
       {/* Ways to Engage */}
       <section className="py-20 lg:py-28 bg-warm-50">
@@ -82,24 +82,28 @@ export default function GetInvolvedPage() {
               title="Partner With Us"
               description="Formal collaboration with universities, health facilities, NGOs, and agencies—aligned to community priorities and ethical standards."
               href="/partnerships"
+              image="/images/partners/partner-international.jpg"
             />
             <FeatureCard
               icon={Heart}
               title="Support Our Work"
               description="Philanthropic and institutional giving that strengthens programmes, research logistics, and participant support."
               variant="outlined"
+              image="/images/partners/partner-communities.jpg"
             />
             <FeatureCard
               icon={Users}
               title="Volunteer & Collaborate"
               description="Share time and expertise through supervised placements, technical assistance, or community-facing activities."
               variant="filled"
+              image="/images/about-community.png"
             />
             <FeatureCard
               icon={Microscope}
               title="Join Research Initiatives"
               description="Explore studies, implementation trials, and learning partnerships grounded in local context and rigorous methods."
               href="/research"
+              image="/images/partners/partner-academic.jpg"
             />
           </StaggerChildren>
         </div>

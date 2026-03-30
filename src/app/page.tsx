@@ -1,7 +1,9 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { AnimatePresence } from "framer-motion";
 import {
   ArrowRight,
   Heart,
@@ -54,31 +56,66 @@ const thematicIcons: Record<string, React.ComponentType<{ className?: string }>>
   Activity,
 };
 
+const HERO_IMAGES = [
+  "/images/hero.png",
+  "/images/projects/maternal-health.jpg",
+  "/images/partners/partner-health-institutions.jpg"
+];
+
+const ROTATED_FEATURE_IMAGES = [
+  "/images/partners/partner-health-institutions.jpg",
+  "/images/partners/partner-communities.jpg",
+  "/images/projects/chw-training.jpg",
+  "/images/news/policy-dialogue.jpg",
+  "/images/projects/adolescent.jpg",
+  "/images/projects/maternal-health.jpg",
+];
+
 export default function HomePage() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % HERO_IMAGES.length);
+    }, 6000); // Change image every 6 seconds
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
       {/* ============================================ */}
       {/* HERO SECTION */}
       {/* ============================================ */}
-      <section className="relative overflow-hidden min-h-[90vh] flex items-center">
-        {/* Hero image - full bleed background */}
+      <section className="relative overflow-hidden min-h-[90vh] flex items-center bg-teal-950">
+        {/* Hero image slider - full bleed background */}
         <div className="absolute inset-0">
-          <Image
-            src="/images/hero.png"
-            alt="Community health worker taking blood pressure of an elderly woman in a rural village, with community members gathered under a tree — CHWRI community-centred care in action."
-            fill
-            className="object-cover object-center"
-            priority
-            sizes="100vw"
-          />
+          <AnimatePresence mode="popLayout">
+            <motion.div
+              key={currentImageIndex}
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              className="absolute inset-0"
+            >
+              <Image
+                src={HERO_IMAGES[currentImageIndex]}
+                alt="CHWRI Impact"
+                fill
+                className="object-cover object-center"
+                priority={currentImageIndex === 0}
+                sizes="100vw"
+              />
+            </motion.div>
+          </AnimatePresence>
           {/* Gradient overlay: dark teal on left for text readability, lighter toward right to show the scene */}
           <div
-            className="absolute inset-0 bg-gradient-to-r from-teal-950/95 via-teal-900/75 to-teal-800/40"
+            className="absolute inset-0 bg-gradient-to-r from-teal-950/85 via-teal-900/65 to-teal-800/30 z-10"
             aria-hidden
           />
         </div>
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 py-24 lg:py-32">
+        <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 py-24 lg:py-32">
           <div className="max-w-2xl">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -137,7 +174,23 @@ export default function HomePage() {
         </div>
 
         {/* Bottom gradient fade into next section */}
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-warm-50 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-warm-50 to-transparent z-20" />
+
+        {/* Slider Indicators */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex items-center gap-3">
+          {HERO_IMAGES.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrentImageIndex(idx)}
+              className={`transition-all duration-500 rounded-full ${
+                idx === currentImageIndex
+                  ? "w-8 h-2 bg-teal-400"
+                  : "w-2 h-2 bg-white/40 hover:bg-white/70"
+              }`}
+              aria-label={`Go to slide ${idx + 1}`}
+            />
+          ))}
+        </div>
       </section>
 
       {/* ============================================ */}
@@ -283,6 +336,7 @@ export default function HomePage() {
               description="Conducting rigorous, community-informed research that produces actionable evidence to improve health outcomes and guide policy decisions."
               href="/research"
               animationVariants={fadeInUpReveal}
+              image="/images/partners/partner-health-institutions.jpg"
             />
             <FeatureCard
               icon={HandHeart}
@@ -290,6 +344,7 @@ export default function HomePage() {
               description="Designing and implementing evidence-based health interventions that are culturally sensitive, community-driven, and focused on measurable impact."
               href="/interventions"
               animationVariants={fadeInUpReveal}
+              image="/images/partners/partner-communities.jpg"
             />
             <FeatureCard
               icon={Building2}
@@ -297,6 +352,7 @@ export default function HomePage() {
               description="Supporting the development of resilient, equitable health systems through workforce training, service improvement, and data-driven management."
               href="/health-systems-strengthening"
               animationVariants={fadeInUpReveal}
+              image="/images/projects/chw-training.jpg"
             />
             <FeatureCard
               icon={BookOpen}
@@ -304,6 +360,7 @@ export default function HomePage() {
               description="Translating research findings into policy recommendations that influence health practice and governance at local, regional, and national levels."
               href="/our-work"
               animationVariants={fadeInUpReveal}
+              image="/images/news/policy-dialogue.jpg"
             />
             <FeatureCard
               icon={GraduationCap}
@@ -311,6 +368,7 @@ export default function HomePage() {
               description="Investing in the skills and knowledge of health professionals, community workers, and researchers through structured training and mentorship."
               href="/our-work"
               animationVariants={fadeInUpReveal}
+              image="/images/projects/adolescent.jpg"
             />
             <FeatureCard
               icon={LineChart}
@@ -318,6 +376,7 @@ export default function HomePage() {
               description="Embedding robust M&E frameworks in all our programmes to ensure accountability, drive continuous learning, and demonstrate impact."
               href="/our-work"
               animationVariants={fadeInUpReveal}
+              image="/images/projects/maternal-health.jpg"
             />
           </StaggerChildren>
         </div>
@@ -335,7 +394,7 @@ export default function HomePage() {
           />
 
           <StaggerChildren className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {THEMATIC_AREAS.map((area) => {
+            {THEMATIC_AREAS.map((area, index) => {
               const Icon =
                 thematicIcons[area.icon] || Heart;
               return (
@@ -346,6 +405,7 @@ export default function HomePage() {
                   description={area.description}
                   href={area.href}
                   variant="filled"
+                  image={ROTATED_FEATURE_IMAGES[index % ROTATED_FEATURE_IMAGES.length]}
                 />
               );
             })}
@@ -617,24 +677,28 @@ export default function HomePage() {
                 title: "Communities",
                 description:
                   "Local communities are at the heart of everything we do — as participants, partners, and beneficiaries.",
+                image: "/images/partners/partner-communities.jpg"
               },
               {
                 icon: Building2,
                 title: "Health Institutions",
                 description:
                   "We partner with hospitals, clinics, and health directorates to strengthen service delivery.",
+                image: "/images/partners/partner-health-institutions.jpg"
               },
               {
                 icon: BookOpen,
                 title: "Academic Partners",
                 description:
                   "Collaborating with universities and research institutions to advance knowledge and train the next generation.",
+                image: "/images/partners/partner-academic.jpg"
               },
               {
                 icon: Globe2,
                 title: "International Partners",
                 description:
                   "Working with global health organisations and development agencies for broader impact and shared learning.",
+                image: "/images/partners/partner-international.jpg"
               },
             ].map((partner) => (
               <FeatureCard
@@ -643,6 +707,7 @@ export default function HomePage() {
                 title={partner.title}
                 description={partner.description}
                 variant="outlined"
+                image={partner.image}
               />
             ))}
           </StaggerChildren>
@@ -725,13 +790,14 @@ export default function HomePage() {
                   <ChevronRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
-              <StaggerChildren className="space-y-4">
+              <StaggerChildren className="space-y-6">
                 <ArticleCard
                   title="CHWRI Launches New Community Health Worker Programme in Walewale District"
                   excerpt="A new initiative to train and deploy community health volunteers in underserved areas of the North-East Region, expanding primary care access."
                   category="Programme Update"
                   date="March 2025"
                   readTime="4 min read"
+                  image="/images/news/chw-program-launch.jpg"
                 />
                 <ArticleCard
                   title="Bridging Research and Policy: Insights from CHWRI's Health Systems Dialogue"
@@ -739,6 +805,7 @@ export default function HomePage() {
                   category="Insights"
                   date="February 2025"
                   readTime="6 min read"
+                  image="/images/news/policy-dialogue.jpg"
                 />
               </StaggerChildren>
             </div>

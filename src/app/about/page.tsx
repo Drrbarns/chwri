@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import {
   CheckCircle2,
   Eye,
@@ -9,7 +10,6 @@ import {
   Microscope,
   Handshake,
   Leaf,
-  MapPin,
 } from "lucide-react";
 import {
   AnimateOnScroll,
@@ -54,10 +54,30 @@ const APPROACH_PILLARS = [
 ] as const;
 
 const TEAM_PLACEHOLDERS = [
-  { role: "Executive Director", gradient: "from-teal-500 to-teal-700" },
-  { role: "Research Director", gradient: "from-sage-500 to-teal-600" },
-  { role: "Programmes & Partnerships Lead", gradient: "from-teal-600 to-sage-600" },
-  { role: "Operations & Administration", gradient: "from-sage-600 to-teal-800" },
+  {
+    role: "Executive Director",
+    unit: "Executive Office",
+    name: "Dr. Kwame Mensah",
+    image: "/images/team-placeholder.jpg",
+  },
+  {
+    role: "Research Director",
+    unit: "Research & Evidence",
+    name: "Dr. Amina Ibrahim",
+    image: "/images/team-placeholder.jpg",
+  },
+  {
+    role: "Programmes & Partnerships Lead",
+    unit: "Programmes & Partnerships",
+    name: "Samuel Osei",
+    image: "/images/team-placeholder.jpg",
+  },
+  {
+    role: "Operations & Administration",
+    unit: "Institutional Operations",
+    name: "Grace Addo",
+    image: "/images/team-placeholder.jpg",
+  },
 ] as const;
 
 export default function AboutPage() {
@@ -67,6 +87,7 @@ export default function AboutPage() {
         badge="About CHWRI"
         title="Dedicated to Health, Driven by Evidence"
         subtitle="The Centre for Health and Wellbeing Research and Interventions (CHWRI) is an independent health research institution rooted in Walewale, Ghana. We generate knowledge, test what works, and partner with communities and systems to turn evidence into better care and healthier lives."
+        heroImage="/images/about-community.png"
       />
 
       {/* Organisation overview */}
@@ -214,15 +235,27 @@ export default function AboutPage() {
       <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <SectionHeader
-              align="left"
-              badge="Purpose"
-              title="Why CHWRI Exists"
-              subtitle="Northern Ghana carries a disproportionate share of preventable morbidity and mortality. Closing that gap requires more than good intentions—it requires evidence that fits context."
-              className="mb-0 lg:mb-0"
-            />
+            <AnimateOnScroll variants={slideInLeft}>
+              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-slate-100 shadow-lg">
+                <Image
+                  src="/images/partners/partner-communities.jpg"
+                  alt="Community members gathered under a tree, representing the rural and underserved populations CHWRI serves"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-teal-950/10" aria-hidden />
+              </div>
+            </AnimateOnScroll>
 
-            <AnimateOnScroll className="space-y-6">
+            <AnimateOnScroll variants={slideInRight} className="space-y-6">
+              <SectionHeader
+                align="left"
+                badge="Purpose"
+                title="Why CHWRI Exists"
+                subtitle="Northern Ghana carries a disproportionate share of preventable morbidity and mortality. Closing that gap requires more than good intentions—it requires evidence that fits context."
+                className="mb-0 lg:mb-0"
+              />
               <p className="text-slate-600 leading-relaxed text-pretty">
                 Rural and underserved communities are frequently under-represented in research and in the
                 evidence base that shapes guidelines. When data are sparse or drawn from distant settings,
@@ -285,27 +318,31 @@ export default function AboutPage() {
       </section>
 
       {/* Geographic context */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-            <AnimateOnScroll variants={slideInLeft}>
-              <div className="rounded-3xl overflow-hidden border border-slate-100 bg-slate-50 aspect-[4/3] lg:aspect-auto lg:min-h-[320px] flex items-center justify-center p-10">
-                <div className="text-center max-w-md">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-teal-100 mb-6 mx-auto">
-                    <MapPin className="w-8 h-8 text-teal-700" aria-hidden />
-                  </div>
-                  <p className="font-heading text-xl font-semibold text-slate-900 mb-2">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-stretch">
+            <AnimateOnScroll variants={slideInLeft} className="h-full">
+              <div className="relative rounded-3xl overflow-hidden border border-slate-100 h-full min-h-[320px] shadow-sm">
+                <Image
+                  src="/images/partners/partner-communities.jpg"
+                  alt="Community members gathered in a rural setting in northern Ghana"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-teal-950/70 via-teal-950/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
+                  <p className="font-heading text-xl lg:text-2xl font-semibold text-white mb-1">
                     Walewale, North-East Region
                   </p>
-                  <p className="text-slate-600 text-sm leading-relaxed">
-                    A strategic base for reaching surrounding districts—close to the communities we serve and
-                    aligned with regional health planning priorities.
+                  <p className="text-teal-100/90 text-sm lg:text-base leading-relaxed">
+                    A strategic base for reaching surrounding districts and supporting community-centred health action.
                   </p>
                 </div>
               </div>
             </AnimateOnScroll>
 
-            <AnimateOnScroll variants={slideInRight} className="space-y-6">
+            <AnimateOnScroll variants={slideInRight} className="space-y-5 py-2 lg:py-6">
               <SectionHeader
                 align="left"
                 badge="Place"
@@ -323,7 +360,7 @@ export default function AboutPage() {
                 context-rich inquiry is most needed, and to strengthen the research ecosystem in northern
                 Ghana through training, mentorship, and sustained collaboration with the health sector.
               </p>
-              <ul className="space-y-3 pt-2">
+              <ul className="space-y-2.5 pt-2">
                 {[
                   "Attention to access, seasonality, and primary-care realities",
                   "Engagement with traditional and formal structures that influence health",
@@ -355,21 +392,32 @@ export default function AboutPage() {
           <StaggerChildren className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {TEAM_PLACEHOLDERS.map((member) => (
               <motion.div key={member.role} variants={fadeInUp}>
-                <div className="rounded-2xl bg-white border border-slate-100 shadow-sm p-6 text-center h-full hover:shadow-md transition-shadow">
-                  <div
-                    className={cn(
-                      "w-20 h-20 rounded-2xl mx-auto mb-5 bg-gradient-to-br shadow-inner",
-                      member.gradient
-                    )}
-                    aria-hidden
-                  />
-                  <p className="text-xs font-semibold uppercase tracking-wider text-teal-600 mb-1">
-                    Placeholder
-                  </p>
-                  <h3 className="font-heading text-lg font-semibold text-slate-900 mb-1">
-                    Name forthcoming
-                  </h3>
-                  <p className="text-sm text-slate-600">{member.role}</p>
+                <div className="group relative rounded-2xl bg-white border border-slate-100 shadow-sm h-full overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-teal-200/80">
+                  <div className="aspect-[4/5] relative overflow-hidden bg-slate-100">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-teal-950/80 via-teal-950/20 to-transparent opacity-80 transition-opacity group-hover:opacity-100" />
+                    
+                    <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                      <h3 className="font-heading text-xl font-semibold text-white mb-1">
+                        {member.name}
+                      </h3>
+                      <p className="text-sm text-teal-200 font-medium">{member.role}</p>
+                    </div>
+                  </div>
+                  <div className="p-6 bg-white">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">
+                      {member.unit}
+                    </p>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      A brief professional biography will be placed here, highlighting expertise, background, and contribution to CHWRI's mission.
+                    </p>
+                  </div>
                 </div>
               </motion.div>
             ))}

@@ -74,6 +74,15 @@ const researchDomains = [
   },
 ];
 
+const RESEARCH_DOMAIN_IMAGES = [
+  "/images/partners/partner-communities.jpg",
+  "/images/projects/maternal-health.jpg",
+  "/images/hero.png",
+  "/images/projects/adolescent.jpg",
+  "/images/news/policy-dialogue.jpg",
+  "/images/partners/partner-health-institutions.jpg",
+] as const;
+
 const processSteps = [
   { label: "Identify", description: "Priorities from communities, partners, and data", icon: Search },
   { label: "Design", description: "Protocols that are ethical, feasible, and useful", icon: PenLine },
@@ -148,7 +157,7 @@ const publications = [
 export default function ResearchPage() {
   return (
     <main>
-      <PageHero badge="Research" title="Generating Evidence for Health Impact" />
+      <PageHero badge="Research" title="Generating Evidence for Health Impact" heroImage="/images/partners/partner-health-institutions.jpg" />
 
       {/* Research Philosophy */}
       <section className="bg-warm-50 py-20 lg:py-28">
@@ -200,13 +209,14 @@ export default function ResearchPage() {
             subtitle="Six pillars guide our portfolio—each connected to primary care, equity, and sustainable health improvement in northern Ghana."
           />
           <StaggerChildren className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {researchDomains.map((d) => (
+            {researchDomains.map((d, index) => (
               <FeatureCard
                 key={d.title}
                 icon={d.icon}
                 title={d.title}
                 description={d.description}
                 variant="default"
+                image={RESEARCH_DOMAIN_IMAGES[index % RESEARCH_DOMAIN_IMAGES.length]}
               />
             ))}
           </StaggerChildren>

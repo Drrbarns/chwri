@@ -27,6 +27,7 @@ const featuredProjects = [
     theme: "Maternal & Child Health",
     date: "2024–Present",
     href: "#",
+    image: "/images/projects/maternal-health.jpg",
   },
   {
     title: "Community Health Worker Training & Deployment",
@@ -37,6 +38,7 @@ const featuredProjects = [
     theme: "Capacity Building",
     date: "2023–Present",
     href: "#",
+    image: "/images/projects/chw-training.jpg",
   },
   {
     title: "Behavioural Health Promotion for Adolescent Wellbeing",
@@ -47,6 +49,7 @@ const featuredProjects = [
     theme: "Mental Wellbeing",
     date: "2025",
     href: "#",
+    image: "/images/projects/adolescent.jpg",
   },
   {
     title: "Strengthening Primary Healthcare Delivery in Rural Communities",
@@ -57,6 +60,7 @@ const featuredProjects = [
     theme: "Health Systems",
     date: "2023–Present",
     href: "#",
+    image: "/images/partners/partner-health-institutions.jpg",
   },
   {
     title: "Preventive Health Education and Immunisation Coverage Programme",
@@ -67,6 +71,7 @@ const featuredProjects = [
     theme: "Preventive Health",
     date: "2022–2024",
     href: "#",
+    image: "/images/hero.png",
   },
   {
     title: "Community-Based Mental Health and Psychosocial Support Pilot",
@@ -77,6 +82,7 @@ const featuredProjects = [
     theme: "Mental Health",
     date: "2025",
     href: "#",
+    image: "/images/news/policy-dialogue.jpg",
   },
 ] as const;
 
@@ -115,6 +121,7 @@ export default function ProgramsPage() {
       <PageHero
         badge="Programs & Projects"
         title="Transforming Communities Through Evidence-Based Programmes"
+        heroImage="/images/projects/maternal-health.jpg"
       />
 
       <section className="bg-warm-50 py-20 lg:py-28">

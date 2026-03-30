@@ -32,42 +32,49 @@ const PARTNER_TYPES = [
     title: "Communities",
     description:
       "We co-create priorities with residents, leaders, and local groups—ensuring research and programmes reflect lived experience and strengthen community agency.",
+    image: "/images/partners/partner-communities.jpg",
   },
   {
     icon: Building2,
     title: "Health Institutions",
     description:
       "From facilities to district teams, we align studies and implementation support with service delivery realities, data needs, and quality improvement goals.",
+    image: "/images/partners/partner-health-institutions.jpg",
   },
   {
     icon: Landmark,
     title: "Policymakers",
     description:
       "We translate evidence into briefings and dialogue that support regulation, financing, and planning decisions grounded in northern Ghana’s context.",
+    image: "/images/news/policy-dialogue.jpg",
   },
   {
     icon: BookOpen,
     title: "Academic Institutions",
     description:
       "Joint protocols, student mentorship, and shared publications deepen methodological rigour and expand the research ecosystem beyond a single site.",
+    image: "/images/partners/partner-academic.jpg",
   },
   {
     icon: Heart,
     title: "NGOs",
     description:
       "Civil-society partners help bridge implementation, advocacy, and reach—especially where community trust and programme continuity are decisive.",
+    image: "/images/about-community.png",
   },
   {
     icon: Globe2,
     title: "Development Agencies",
     description:
       "We align monitoring, evaluation, and learning with donor standards while keeping focus on ethical practice and measurable community benefit.",
+    image: "/images/hero.png",
   },
   {
     icon: Handshake,
     title: "International Partners",
     description:
       "Global collaborators bring comparative insight, technical depth, and fair knowledge exchange—without displacing local leadership or priorities.",
+    image: "/images/partners/partner-international.jpg",
   },
 ] as const;
 
@@ -114,6 +121,7 @@ export default function PartnershipsPage() {
         badge="Partnerships"
         title="Collaborating for Lasting Health Impact"
         subtitle="CHWRI works with communities, health systems, academia, and funders in Walewale and beyond—combining local leadership with rigorous methods to improve health and wellbeing."
+        heroImage="/images/partners/partner-international.jpg"
       />
 
       {/* Why Partner With CHWRI */}
@@ -219,6 +227,7 @@ export default function PartnershipsPage() {
                 title={partner.title}
                 description={partner.description}
                 variant="outlined"
+                image={partner.image}
               />
             ))}
           </StaggerChildren>

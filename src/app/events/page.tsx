@@ -128,6 +128,7 @@ export default function EventsPage() {
         badge="Events & Trainings"
         title="Building Knowledge, Strengthening Capacity"
         subtitle="CHWRI convenes workshops, dialogues, and trainings in Walewale and across northern Ghana—grounded in community priorities and rigorous health research."
+        heroImage="/images/news/policy-dialogue.jpg"
       />
 
       <section className="bg-warm-50 py-20 lg:py-28">

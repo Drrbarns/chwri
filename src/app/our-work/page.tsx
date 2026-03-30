@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Microscope,
   HandHeart,
@@ -11,7 +12,6 @@ import {
   Users,
   LineChart,
   CheckCircle2,
-  ImageIcon,
 } from "lucide-react";
 import {
   AnimateOnScroll,
@@ -75,6 +75,16 @@ const workstreams = [
   },
 ] as const;
 
+const WORKSTREAM_IMAGES = [
+  "/images/partners/partner-health-institutions.jpg",
+  "/images/projects/adolescent.jpg",
+  "/images/projects/chw-training.jpg",
+  "/images/news/policy-dialogue.jpg",
+  "/images/partners/partner-academic.jpg",
+  "/images/partners/partner-communities.jpg",
+  "/images/projects/maternal-health.jpg",
+] as const;
+
 const methodologySteps = [
   {
     title: "Assess",
@@ -117,18 +127,18 @@ function SectionShell({
   );
 }
 
-function VisualPlaceholder({ label }: { label: string }) {
+function VisualPlaceholder({ label, image }: { label: string; image: string }) {
   return (
-    <div
-      className={cn(
-        "relative overflow-hidden rounded-2xl border border-teal-100/80 bg-gradient-to-br from-teal-100/90 via-white to-sage-100/70",
-        "aspect-[4/3] flex flex-col items-center justify-center gap-3 shadow-sm"
-      )}
-      aria-hidden
-    >
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSA2MCAwIEwgMCAwIDAgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzBmNzY2OSIgc3Ryb2tlLXdpZHRoPSIwLjMiIHN0cm9rZS1vcGFjaXR5PSIwLjA4Ii8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-60" />
-      <ImageIcon className="relative w-12 h-12 text-teal-600/40" />
-      <span className="relative text-sm font-medium text-teal-800/50 tracking-wide">
+    <div className="relative overflow-hidden rounded-2xl border border-teal-100/80 aspect-[4/3] shadow-sm">
+      <Image
+        src={image}
+        alt={label}
+        fill
+        className="object-cover"
+        sizes="(max-width: 1024px) 100vw, 50vw"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-teal-950/65 via-teal-950/20 to-transparent" />
+      <span className="absolute left-5 bottom-4 text-sm font-medium text-white/90 tracking-wide">
         {label}
       </span>
     </div>
@@ -158,6 +168,7 @@ export default function OurWorkPage() {
         badge="Our Work"
         title="Comprehensive Health Solutions Through Research and Action"
         subtitle="From our base in Walewale to national partnerships, CHWRI unites rigorous science with community-grounded action—so evidence strengthens care, systems, and policy across Ghana."
+        heroImage="/images/hero.png"
       />
 
       <SectionShell className="bg-warm-50">
@@ -182,12 +193,13 @@ export default function OurWorkPage() {
           align="center"
         />
         <StaggerChildren className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {workstreams.map((ws) => (
+          {workstreams.map((ws, index) => (
             <FeatureCard
               key={ws.title}
               icon={ws.icon}
               title={ws.title}
               description={ws.description}
+              image={WORKSTREAM_IMAGES[index % WORKSTREAM_IMAGES.length]}
               {...("href" in ws && ws.href ? { href: ws.href } : {})}
             />
           ))}
@@ -221,7 +233,7 @@ export default function OurWorkPage() {
             </Link>
           </AnimateOnScroll>
           <AnimateOnScroll variants={slideInRight}>
-            <VisualPlaceholder label="Research imagery" />
+            <VisualPlaceholder label="Research imagery" image="/images/partners/partner-health-institutions.jpg" />
           </AnimateOnScroll>
         </div>
       </SectionShell>
@@ -232,7 +244,7 @@ export default function OurWorkPage() {
             variants={slideInLeft}
             className="order-2 lg:order-1"
           >
-            <VisualPlaceholder label="Community interventions" />
+            <VisualPlaceholder label="Community interventions" image="/images/partners/partner-communities.jpg" />
           </AnimateOnScroll>
           <AnimateOnScroll
             variants={slideInRight}
@@ -291,7 +303,7 @@ export default function OurWorkPage() {
             </Link>
           </AnimateOnScroll>
           <AnimateOnScroll variants={slideInRight}>
-            <VisualPlaceholder label="Systems & facilities" />
+            <VisualPlaceholder label="Systems & facilities" image="/images/projects/chw-training.jpg" />
           </AnimateOnScroll>
         </div>
       </SectionShell>
@@ -299,7 +311,7 @@ export default function OurWorkPage() {
       <SectionShell className="bg-white">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <AnimateOnScroll variants={slideInLeft}>
-            <VisualPlaceholder label="Policy dialogue" />
+            <VisualPlaceholder label="Policy dialogue" image="/images/news/policy-dialogue.jpg" />
           </AnimateOnScroll>
           <AnimateOnScroll variants={slideInRight}>
             <span className="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-teal-50 text-teal-700 border border-teal-100 mb-4">

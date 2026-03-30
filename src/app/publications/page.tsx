@@ -172,6 +172,7 @@ export default function PublicationsPage() {
         badge="Publications & Reports"
         title="Knowledge That Informs Policy and Practice"
         subtitle="Research papers, policy briefs, evaluations, and case studies from CHWRI — the Centre for Health & Wellbeing Research and Interventions in Walewale, Ghana."
+        heroImage="/images/partners/partner-academic.jpg"
       />
 
       <section className="bg-warm-50 py-20 lg:py-28">
