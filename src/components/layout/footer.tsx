@@ -6,7 +6,6 @@ import {
   Mail,
   MapPin,
   ArrowRight,
-  Heart,
   Facebook,
   Twitter,
   Linkedin,
@@ -203,9 +202,8 @@ export function Footer() {
               </Link>
             ))}
           </div>
-          <p className="text-xs text-teal-200/30 flex items-center gap-1">
-            Built with <Heart className="w-3 h-3 text-teal-400/50" /> for
-            community health
+          <p className="text-xs text-teal-200/30">
+            Powered By Doctor Barns Tech "Built withfor community health"
           </p>
         </div>
       </div>

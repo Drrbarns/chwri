@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import {
   UsersRound,
@@ -134,12 +135,27 @@ export default function InterventionsPage() {
           />
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start mt-4">
             <AnimateOnScroll variants={slideInLeft}>
-              <p className="text-slate-600 leading-relaxed text-pretty lg:pt-2">
-                CHWRI works alongside districts, facilities, and community
-                structures in Walewale and the North-East Region—so interventions
-                are co-owned, culturally grounded, and aligned with how people
-                already seek care and support one another.
-              </p>
+              <div className="space-y-5">
+                <div className="relative rounded-3xl overflow-hidden border border-slate-100 shadow-sm aspect-[4/3]">
+                  <Image
+                    src="/images/partners/partner-communities.jpg"
+                    alt="Community members and local health stakeholders collaborating in Walewale"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-teal-950/65 via-teal-950/15 to-transparent" />
+                  <p className="absolute bottom-4 left-4 right-4 text-sm font-medium text-white/90">
+                    Co-created interventions grounded in local realities
+                  </p>
+                </div>
+                <p className="text-slate-600 leading-relaxed text-pretty">
+                  CHWRI works alongside districts, facilities, and community
+                  structures in Walewale and the North-East Region—so interventions
+                  are co-owned, culturally grounded, and aligned with how people
+                  already seek care and support one another.
+                </p>
+              </div>
             </AnimateOnScroll>
             <AnimateOnScroll variants={slideInRight}>
               <ul className="space-y-4">
