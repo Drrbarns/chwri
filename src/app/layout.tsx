@@ -18,6 +18,7 @@ const sourceSerif = Source_Serif_4({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.chwri.org"),
+  applicationName: "CHWRI",
   title: {
     default:
       "CHWRI | Centre for Health & Wellbeing Research and Interventions",
@@ -36,6 +37,9 @@ export const metadata: Metadata = {
     "Centre for Health and Wellbeing Research",
     "Walewale Ghana",
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "CHWRI | Centre for Health & Wellbeing Research and Interventions",
     description:
@@ -44,16 +48,63 @@ export const metadata: Metadata = {
     siteName: "CHWRI",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/images/chwri-logo.png",
+        width: 1024,
+        height: 558,
+        alt: "CHWRI logo",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "CHWRI | Centre for Health & Wellbeing Research and Interventions",
     description:
       "Advancing health outcomes and quality of life through innovative research and evidence-based interventions in Ghana and beyond.",
+    images: ["/images/chwri-logo.png"],
+  },
+  icons: {
+    icon: "/images/chwri-logo.png",
+    shortcut: "/images/chwri-logo.png",
+    apple: "/images/chwri-logo.png",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Centre for Health & Wellbeing Research and Interventions (CHWRI)",
+  url: "https://www.chwri.org",
+  logo: "https://www.chwri.org/images/chwri-logo.png",
+  sameAs: [],
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      email: "contact@chwri.org",
+      telephone: "+233553311101",
+      areaServed: "GH",
+      availableLanguage: ["en"],
+    },
+  ],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Box 66",
+    addressLocality: "Walewale",
+    addressRegion: "North-East Region",
+    addressCountry: "GH",
   },
 };
 
@@ -68,6 +119,12 @@ export default function RootLayout({
       className={`${sourceSans.variable} ${sourceSerif.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

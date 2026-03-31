@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import {
   Phone,
   Mail,
@@ -55,20 +56,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
           {/* Brand column */}
           <div className="lg:col-span-4">
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-400 to-teal-500 flex items-center justify-center">
-                <span className="text-teal-950 font-heading font-bold text-lg">
-                  C
-                </span>
-              </div>
-              <div>
-                <span className="block text-white font-heading font-bold text-lg leading-tight">
-                  CHWRI
-                </span>
-                <span className="block text-teal-300/60 text-[10px] tracking-wider uppercase">
-                  Health & Wellbeing Research
-                </span>
-              </div>
+            <div className="relative w-[220px] h-[70px] mb-5">
+              <Image
+                src="/images/chwri-logo.png"
+                alt="CHWRI logo"
+                fill
+                className="object-contain object-left"
+                sizes="220px"
+              />
             </div>
             <p className="text-teal-200/60 text-sm leading-relaxed mb-6 max-w-sm">
               A multidisciplinary hub dedicated to improving health outcomes and

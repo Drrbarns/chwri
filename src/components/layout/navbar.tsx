@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -72,20 +73,16 @@ export function Navbar() {
         <nav className="max-w-7xl mx-auto px-4 sm:px-6" aria-label="Main navigation">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 group" aria-label="CHWRI Home">
-              <div className="relative w-10 h-10 lg:w-11 lg:h-11 rounded-xl bg-gradient-to-br from-teal-600 to-teal-700 flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-                <span className="text-white font-heading font-bold text-lg lg:text-xl tracking-tight">
-                  C
-                </span>
-                <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-sage-500 rounded-full border-2 border-white" />
-              </div>
-              <div className="hidden sm:block">
-                <span className="block text-teal-800 font-heading font-bold text-lg leading-tight tracking-tight">
-                  CHWRI
-                </span>
-                <span className="block text-slate-500 text-[10px] leading-tight tracking-wider uppercase">
-                  Health & Wellbeing Research
-                </span>
+            <Link href="/" className="flex items-center group" aria-label="CHWRI Home">
+              <div className="relative w-[140px] h-11 sm:w-[168px] sm:h-12 lg:w-[196px] lg:h-14">
+                <Image
+                  src="/images/chwri-logo.png"
+                  alt="CHWRI logo"
+                  fill
+                  className="object-contain object-left"
+                  sizes="(max-width: 640px) 140px, (max-width: 1024px) 168px, 196px"
+                  priority
+                />
               </div>
             </Link>
 

@@ -1,20 +1,12 @@
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Health Systems Strengthening",
-  description:
-    "Building resilient health systems in Ghana with CHWRI—evidence-led policy, training, and community health strengthening from Walewale across Northern Ghana.",
-  openGraph: {
-    title: "Health Systems Strengthening | CHWRI",
-    description:
-      "Building resilient health systems in Ghana with CHWRI—evidence-led policy, training, and community health strengthening from Walewale across Northern Ghana.",
-  },
-};
+export const metadata: Metadata = buildPageMetadata(
+  "Health Systems Strengthening",
+  "Building resilient health systems in Ghana with CHWRI—evidence-led policy, training, and community health strengthening from Walewale across Northern Ghana.",
+  "/health-systems-strengthening"
+);
 
-export default function HealthSystemsStrengtheningLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function HealthSystemsStrengtheningLayout({ children }: { children: React.ReactNode }) {
   return children;
 }
