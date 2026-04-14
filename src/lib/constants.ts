@@ -7,6 +7,7 @@ export const NAV_LINKS = [
       { label: "Our Story", href: "/about" },
       { label: "Vision & Mission", href: "/about#vision-mission" },
       { label: "Core Values", href: "/about#values" },
+      { label: "Strategic Plan 2025–2030", href: "/strategic-plan" },
       { label: "Our Team", href: "/about#team" },
     ],
   },
@@ -42,6 +43,7 @@ export const FOOTER_LINKS = {
   about: [
     { label: "Our Story", href: "/about" },
     { label: "Vision & Mission", href: "/about#vision-mission" },
+    { label: "Strategic Plan 2025–2030", href: "/strategic-plan" },
     { label: "Our Team", href: "/about#team" },
     { label: "Core Values", href: "/about#values" },
     { label: "Careers", href: "/careers" },

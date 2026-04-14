@@ -153,14 +153,16 @@ export function Footer() {
             </h4>
             <div className="flex items-center gap-3 mb-6">
               {[
-                { icon: Facebook, label: "Facebook" },
-                { icon: Twitter, label: "Twitter" },
-                { icon: Linkedin, label: "LinkedIn" },
-                { icon: Youtube, label: "YouTube" },
-              ].map(({ icon: Icon, label }) => (
+                { icon: Facebook, label: "Facebook", href: "https://www.facebook.com" },
+                { icon: Twitter, label: "Twitter", href: "https://x.com" },
+                { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com" },
+                { icon: Youtube, label: "YouTube", href: "https://www.youtube.com" },
+              ].map(({ icon: Icon, label, href }) => (
                 <a
                   key={label}
-                  href="#"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center text-teal-200/60 hover:text-white transition-all"
                   aria-label={label}
                 >

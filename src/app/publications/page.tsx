@@ -47,7 +47,7 @@ const publications: {
     authors: "Adongo, M. et al.",
     type: "Research Paper",
     date: "2024",
-    href: "#",
+    href: "/publications",
   },
   {
     title:
@@ -55,7 +55,7 @@ const publications: {
     authors: "CHWRI Maternal & Child Health Unit",
     type: "Research Paper",
     date: "2024",
-    href: "#",
+    href: "/publications",
   },
   {
     title:
@@ -63,7 +63,7 @@ const publications: {
     authors: "Health Equity Working Group",
     type: "Research Paper",
     date: "2023",
-    href: "#",
+    href: "/publications",
   },
   {
     title:
@@ -71,7 +71,7 @@ const publications: {
     authors: "Policy & Systems Unit",
     type: "Policy Brief",
     date: "2024",
-    href: "#",
+    href: "/publications",
   },
   {
     title:
@@ -79,7 +79,7 @@ const publications: {
     authors: "CHWRI & Partners",
     type: "Policy Brief",
     date: "2023",
-    href: "#",
+    href: "/publications",
   },
   {
     title:
@@ -87,7 +87,7 @@ const publications: {
     authors: "Programme Evaluation Team",
     type: "Report",
     date: "2024",
-    href: "#",
+    href: "/publications",
   },
   {
     title:
@@ -95,7 +95,7 @@ const publications: {
     authors: "CHWRI",
     type: "Report",
     date: "2023",
-    href: "#",
+    href: "/publications",
   },
   {
     title:
@@ -103,7 +103,7 @@ const publications: {
     authors: "Community Interventions Team",
     type: "Case Study",
     date: "2024",
-    href: "#",
+    href: "/publications",
   },
   {
     title:
@@ -111,7 +111,7 @@ const publications: {
     authors: "Participatory Research Collective",
     type: "Case Study",
     date: "2023",
-    href: "#",
+    href: "/publications",
   },
   {
     title:
@@ -119,7 +119,7 @@ const publications: {
     authors: "Environmental Health & CHWRI",
     type: "Research Paper",
     date: "2022",
-    href: "#",
+    href: "/publications",
   },
 ];
 
@@ -130,7 +130,7 @@ const downloadResources = [
       "Highlights from our research, partnerships, and community engagement in Walewale and the wider region.",
     icon: FileText,
     label: "PDF · Annual report",
-    href: "#",
+    href: "/publications",
   },
   {
     title: "District Health Data Brief — North East Region",
@@ -138,7 +138,7 @@ const downloadResources = [
       "Summary indicators on maternal health, immunisation, and primary care access (placeholder figures for planning).",
     icon: BookOpen,
     label: "PDF · Data brief",
-    href: "#",
+    href: "/publications",
   },
   {
     title: "Community Research Ethics & Field Toolkit",
@@ -146,7 +146,7 @@ const downloadResources = [
       "Templates, checklists, and guidance for ethical engagement with participants and local stakeholders.",
     icon: FolderOpen,
     label: "ZIP · Toolkit",
-    href: "#",
+    href: "/publications",
   },
 ];
 

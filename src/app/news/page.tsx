@@ -34,7 +34,7 @@ const articles: {
     category: "Programme Updates",
     date: "Feb 2025",
     readTime: "5 min read",
-    href: "#",
+    href: "/news",
     image: "/images/news/chw-program-launch.jpg",
   },
   {
@@ -45,7 +45,7 @@ const articles: {
     category: "Research Insights",
     date: "Jan 2025",
     readTime: "7 min read",
-    href: "#",
+    href: "/news",
     image: "/images/partners/partner-academic.jpg",
   },
   {
@@ -56,7 +56,7 @@ const articles: {
     category: "Community Stories",
     date: "Dec 2024",
     readTime: "6 min read",
-    href: "#",
+    href: "/news",
     image: "/images/partners/partner-communities.jpg",
   },
   {
@@ -67,7 +67,7 @@ const articles: {
     category: "Policy",
     date: "Nov 2024",
     readTime: "4 min read",
-    href: "#",
+    href: "/news",
     image: "/images/news/policy-dialogue.jpg",
   },
   {
@@ -78,7 +78,7 @@ const articles: {
     category: "Events",
     date: "Oct 2024",
     readTime: "2 min read",
-    href: "#",
+    href: "/news",
     image: "/images/projects/chw-training.jpg",
   },
   {
@@ -89,7 +89,7 @@ const articles: {
     category: "Programme Updates",
     date: "Sep 2024",
     readTime: "5 min read",
-    href: "#",
+    href: "/news",
     image: "/images/projects/maternal-health.jpg",
   },
 ];
@@ -99,31 +99,31 @@ const pressItems: { title: string; date: string; href: string }[] = [
     title:
       "CHWRI and Walewale District Health Directorate sign collaboration framework on data quality and joint learning reviews.",
     date: "12 Mar 2025",
-    href: "#",
+    href: "/news",
   },
   {
     title:
       "Forty-two newly trained community health workers deployed across twelve communities after graduation ceremony in Walewale.",
     date: "28 Feb 2025",
-    href: "#",
+    href: "/news",
   },
   {
     title:
       "CHWRI welcomes visiting researchers from University of Ghana to co-design adolescent mental health scoping work.",
     date: "7 Feb 2025",
-    href: "#",
+    href: "/news",
   },
   {
     title:
       "District nutrition surveillance dashboard updated with CHWRI-supported community growth-monitoring tallies.",
     date: "22 Jan 2025",
-    href: "#",
+    href: "/news",
   },
   {
     title:
       "Media advisory: Director’s briefing on CHW programme scale-up scheduled for community radio partners.",
     date: "9 Jan 2025",
-    href: "#",
+    href: "/news",
   },
 ];
 
@@ -151,7 +151,7 @@ export default function NewsPage() {
             category="Programme Update"
             date="March 2025"
             readTime="8 min read"
-            href="#"
+            href="/news"
             image="/images/news/chw-program-launch.jpg"
           />
         </div>

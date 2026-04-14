@@ -390,7 +390,7 @@ export default function HomePage() {
           <SectionHeader
             badge="Focus Areas"
             title="Our Core Thematic Areas"
-            subtitle="We address the most pressing health challenges facing communities in Ghana and across the region through focused, evidence-driven thematic programmes."
+            subtitle="We address the most pressing health challenges facing communities in Ghana and across sub-Saharan Africa through focused, evidence-driven thematic programmes."
           />
 
           <StaggerChildren className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

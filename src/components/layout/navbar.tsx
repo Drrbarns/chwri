@@ -74,13 +74,13 @@ export function Navbar() {
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center group" aria-label="CHWRI Home">
-              <div className="relative w-[140px] h-11 sm:w-[168px] sm:h-12 lg:w-[196px] lg:h-14">
+              <div className="relative w-[176px] h-12 sm:w-[220px] sm:h-14 lg:w-[270px] lg:h-16">
                 <Image
                   src="/images/chwri-logo.png"
                   alt="CHWRI logo"
                   fill
                   className="object-contain object-left"
-                  sizes="(max-width: 640px) 140px, (max-width: 1024px) 168px, 196px"
+                  sizes="(max-width: 640px) 176px, (max-width: 1024px) 220px, 270px"
                   priority
                 />
               </div>

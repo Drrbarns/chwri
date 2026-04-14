@@ -26,7 +26,7 @@ const featuredProjects = [
     location: "North-East Region",
     theme: "Maternal & Child Health",
     date: "2024–Present",
-    href: "#",
+    href: "/programs",
     image: "/images/projects/maternal-health.jpg",
   },
   {
@@ -37,7 +37,7 @@ const featuredProjects = [
     location: "Walewale District",
     theme: "Capacity Building",
     date: "2023–Present",
-    href: "#",
+    href: "/programs",
     image: "/images/projects/chw-training.jpg",
   },
   {
@@ -48,7 +48,7 @@ const featuredProjects = [
     location: "North-East Region",
     theme: "Mental Wellbeing",
     date: "2025",
-    href: "#",
+    href: "/programs",
     image: "/images/projects/adolescent.jpg",
   },
   {
@@ -59,7 +59,7 @@ const featuredProjects = [
     location: "North-East Region",
     theme: "Health Systems",
     date: "2023–Present",
-    href: "#",
+    href: "/programs",
     image: "/images/partners/partner-health-institutions.jpg",
   },
   {
@@ -70,7 +70,7 @@ const featuredProjects = [
     location: "Walewale",
     theme: "Preventive Health",
     date: "2022–2024",
-    href: "#",
+    href: "/programs",
     image: "/images/hero.png",
   },
   {
@@ -81,7 +81,7 @@ const featuredProjects = [
     location: "North-East Region",
     theme: "Mental Health",
     date: "2025",
-    href: "#",
+    href: "/programs",
     image: "/images/news/policy-dialogue.jpg",
   },
 ] as const;

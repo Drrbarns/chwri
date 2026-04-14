@@ -129,28 +129,28 @@ const publications = [
     authors: "CHWRI Research Collective",
     type: "Research Paper" as const,
     date: "2024",
-    href: "#",
+    href: "/publications",
   },
   {
     title: "Equity in Rural Primary Care: Recommendations for District Health Management Teams",
     authors: "Policy & Systems Unit",
     type: "Policy Brief" as const,
     date: "2024",
-    href: "#",
+    href: "/publications",
   },
   {
     title: "Annual Learning Report — Participatory Research in the Upper East Corridor",
     authors: "CHWRI",
     type: "Report" as const,
     date: "2023",
-    href: "#",
+    href: "/publications",
   },
   {
     title: "From Field Notes to Action: Co-designing feedback with community advisory groups",
     authors: "Ethics & Engagement Team",
     type: "Case Study" as const,
     date: "2023",
-    href: "#",
+    href: "/publications",
   },
 ];
 
