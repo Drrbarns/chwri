@@ -55,28 +55,39 @@ const APPROACH_PILLARS = [
 
 const TEAM_PLACEHOLDERS = [
   {
-    role: "Executive Director",
-    unit: "Executive Office",
-    name: "Dr. Kwame Mensah",
-    image: "/images/team-placeholder.jpg",
+    role: "Chief Executive Officer (CEO)",
+    unit: "Centre for Health & Wellbeing Research and Interventions (CHWRI)",
+    name: "Abubakari Jaliu",
+    image: "/images/team/abubakari-jaliu.png",
+    bio: "Public health leader with over a decade of experience in implementation research, health systems strengthening, nutrition, MEL, and social and behaviour change communication. He leads CHWRI's evidence-driven strategy and currently pursues a PhD in Public Health with a focus on non-communicable diseases.",
   },
   {
-    role: "Research Director",
-    unit: "Research & Evidence",
-    name: "Dr. Amina Ibrahim",
-    image: "/images/team-placeholder.jpg",
+    role: "Head, Internal Audit Department",
+    unit: "Nursing and Midwifery Training College, Nalerigu (Ministry of Health, Ghana)",
+    name: "Jamal Mohammed Abubakari",
+    image: "/images/team/jamal-mohammed-abubakari.png",
+    bio: "Public sector Internal Auditor and governance professional with extensive experience in risk management, internal controls, and regulatory compliance. Jamal holds an MBA in Auditing (UPSA), is a member of the Institute of Internal Auditors Ghana, and contributes to both institutional accountability and community leadership.",
   },
   {
-    role: "Programmes & Partnerships Lead",
-    unit: "Programmes & Partnerships",
-    name: "Samuel Osei",
+    role: "Profile Forthcoming",
+    unit: "Core Leadership",
+    name: "Name forthcoming",
     image: "/images/team-placeholder.jpg",
+    bio: "Official profile details and photograph will be published after final internal validation.",
   },
   {
-    role: "Operations & Administration",
-    unit: "Institutional Operations",
-    name: "Grace Addo",
+    role: "Profile Forthcoming",
+    unit: "Core Leadership",
+    name: "Name forthcoming",
     image: "/images/team-placeholder.jpg",
+    bio: "Official profile details and photograph will be published after final internal validation.",
+  },
+  {
+    role: "Profile Forthcoming",
+    unit: "Core Leadership",
+    name: "Name forthcoming",
+    image: "/images/team-placeholder.jpg",
+    bio: "Official profile details and photograph will be published after final internal validation.",
   },
 ] as const;
 
@@ -386,7 +397,7 @@ export default function AboutPage() {
           <SectionHeader
             badge="Leadership"
             title="Our Team"
-            subtitle="Profiles and biographies will appear here as we update this section. For enquiries in the meantime, please reach out through our contact page."
+            subtitle="Core staff profiles are being added progressively. Verified institutional biographies and photos are published as they are approved."
           />
 
           <StaggerChildren className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -415,7 +426,7 @@ export default function AboutPage() {
                       {member.unit}
                     </p>
                     <p className="text-sm text-slate-600 leading-relaxed">
-                      A brief professional biography will be placed here, highlighting expertise, background, and contribution to CHWRI's mission.
+                      {member.bio}
                     </p>
                   </div>
                 </div>
